@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pricing Card</title>
+    <link rel="stylesheet" href="stylesheet.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>choose your plan</h1>
+        <p class="tag">Select the perfect pricing plan for your needs</p>
+      </header>
+      <div class="pricing-cards">
+        <!-- basic plan -->
+        <div class="card">
+          <div class="card-header">
+            <div class="icon"><i class="fas fa-rocket"></i></div>
+            <h3>Basic</h3>
+            <div class="price">
+              <span class="currency">$</span>
+              <span class="amount">9</span>
+              <span class="period">/month</span>
+            </div>
+            <div class="ch-note">
+              Perfect for individuals and small projects
+            </div>
+          </div>
+          <div class="card-body">
+            <ul class="features">
+              <li><i class="fas fa-check"></i>5 Projects</li>
+              <li><i class="fas fa-check"></i>20GB Storage</li>
+              <li><i class="fas fa-check"></i>Basic Support</li>
+              <li><i class="fas fa-check"></i>Email Notifications</li>
+              <li class="disabled">
+                <i class="fas fa-times"></i>Advanced Analytics
+              </li>
+              <li class="disabled">
+                <i class="fas fa-times"></i>Cusome Domain
+              </li>
+            </ul>
+          </div>
+          <div class="card-footer">
+            <button class="btn">Get Started</button>
+          </div>
+        </div>
+        <!-- pro -->
+        <div class="card popular">
+          <div class="card-badge"><p>Most Popular</p></div>
+          <div class="card-header">
+            <div class="icon"><i class="fas fa-gem"></i></div>
+            <h3>Basic</h3>
+            <div class="price">
+              <span class="currency">$</span>
+              <span class="amount">29</span>
+              <span class="period">/month</span>
+            </div>
+            <div class="ch-note">Great for growing businesses and teams</div>
+          </div>
+          <div class="card-body">
+            <ul class="features">
+              <li><i class="fas fa-check"></i>5 Projects</li>
+              <li><i class="fas fa-check"></i>20GB Storage</li>
+              <li><i class="fas fa-check"></i>Basic Support</li>
+              <li><i class="fas fa-check"></i>Email Notifications</li>
+              <li><i class="fas fa-check"></i>Advanced Analytics</li>
+              <li class="disabled">
+                <i class="fas fa-times"></i>Cusome Domain
+              </li>
+            </ul>
+          </div>
+          <div class="card-footer">
+            <button class="btn">Get Started</button>
+          </div>
+        </div>
+        <!-- Enterprise -->
+        <div class="card">
+          <div class="card-header">
+            <div class="icon"><i class="fas fa-building"></i></div>
+            <h3>Enterprise</h3>
+            <div class="price">
+              <span class="currency">$</span>
+              <span class="amount">79</span>
+              <span class="period">/month</span>
+            </div>
+            <div class="ch-note">For large companies and organizations</div>
+          </div>
+          <div class="card-body">
+            <ul class="features">
+              <li><i class="fas fa-check"></i>5 Projects</li>
+              <li><i class="fas fa-check"></i>20GB Storage</li>
+              <li><i class="fas fa-check"></i>Basic Support</li>
+              <li><i class="fas fa-check"></i>Email Notifications</li>
+              <li><i class="fas fa-check"></i>Advanced Analytics</li>
+              <li><i class="fas fa-check"></i>Cusome Domain</li>
+            </ul>
+          </div>
+          <div class="card-footer">
+            <button class="btn">Get Started</button>
+          </div>
+        </div>
+      </div>
+      <!-- testimonial -->
+      <div class="testimonial">
+        <div class="quote">
+          <i class="fas fa-quote-left"></i>
+          <p>
+            Switching to this service was one of the best decisions we've made.
+            The pricing is transparent and the features are exactly what we
+            needed.
+          </p>
+          <div class="author">
+            <div class="avatar">
+              <img
+                src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAMAAzAMBIgACEQEDEQH/xAAcAAABBQEBAQAAAAAAAAAAAAAAAQIDBAUGBwj/xAA/EAABAwIEAwUGBAQGAQUAAAABAAIDBBEFEiExQVFhBhMiMnEjQoGRwdEUUqGxB2Lh8DNDU3KS8aIVJFRjg//EABkBAQADAQEAAAAAAAAAAAAAAAABAgMEBf/EACIRAAIDAAICAgMBAAAAAAAAAAABAgMREiEEMUFREyJhMv/aAAwDAQACEQMRAD8A9xQhCAEIQgBCEIAQhCAEhKQlNvdVbJSFLkmZIhUbZOCObm3UZi/K4hSoVWtJIM0jNbkqRtQD5m2TrX3CjfDfYqv7L0yen7LDXB2xSqiC6N17qzDMHaO0ctI2b7KuP0TIQhalQQhCAEIQgBCEIAQhCAEIQgBCEIATXHkhxTNVSTJSD1QhCoWBCEIAQhCAEFCEAxzAQoHBzXdDxVpNc0EWKrKOlk8Egmv4SrCoOBa63BWIJc3hPmVoT+GVlH5ROhCFsUBCEIAQhCAEIQgBCEIATXGyHuDW3KiYS4FxVZSwlIdxQhCzLAhCEAIQhACEIQAhCEAIQhAMey4VfVhuNHDirfFQzM4hUkvksmTxPzsvx4qRUYnljhbY7q6DcXC1rlyRSSwVCRKtCoIQhACEIQAhCjmfkZfiobxaEQzPzvDBsN1JbZVo9Xi/NWlhF8uzVrAQhCsVBCFn4/i0GB4VUYjVXMcLL5Ru48APUqQaCF5BivbjtbhmJt/GxQU4ewStpixrmmM7eIEnh69F6R2YxyHtDhEVfAzIXEskjJv3bxuFANdCEIAQhI4houTYDigFQvOMU/iiynrCzD8MdUUjXECokkLO9sbEtFjp669Aux7M9oKPtHh34yiLhZ2SWJ9s0buRsgNZI4XBCVHFAVHDKSFYpn6ZTwUc7RcEKNpynTRZJ8ZFmtRfSprHBzQQnLrMgQhCAEISXF0BDV1EdLA+eZwbHG25K4il7RTTY331Q5wppPAI76NHA/1Tu2WLfian8FA68MR9pb3ncvQfuubXm+Re+WR9HPO3JdHqEZ8Q9VbBXJdl8W75raGod7Vg9mT7zV1EUmYWW1M9R1qSnHUSoQoqidkLMzyOg5rYlJvpEq5D+KsEs/Y+oMTcwikjkeP5Q7U/Dda7sUmJ8LWtHIqWOqirWOpqmNrmyAtLXatcDwKqppmjpmlrR88yPfIbyPc42AGZxNhwC9Y/g3HKzA6+R4tG+q9medmNufp8EVH8K8NkqzJBXVMVOTfuW5TboCV22G0FNhlDFR0cXdwRCzWj+91bDItjZCr1tQKWlfMQTl4DTosgdoHf/HH/ACVJWRi+zWumdi2KN9ZHa4yt7MYmYL94Kd9rb2tr+l1HSY0+epZGYQ0OO+bZbMrGyRlj25mPaQ5vMHgpjNSXRWyuVbyR851WLVlXhlFh00jXU1Hm7luUAi++vH+912v8GpJRi2IxD/CdThzv9wcAP0LkmNfwuxEVz3YNPTPpHuu1lRIWOjHLQG/rp8d12PZHs7B2Sw2TvZe+q5yHSvAsNNmt6C5+ancKpN9I6kIWQ7FJS67Wsy8r6qzSV7ZiGSDK47DgVHNGjpmluFuUeEqnI/IzMp5X3NhqAs2slBJJIDGbklZWSIiLDjMFC9kFbIWGV3gcRcfGy3GkEAjULyrE6s1lU+S3s9mDkF2XY/F/xdOaOof7eEWaSdXs4epCUX6+DOT8qlNpHSoSJV2mgXWH2pxhmE0BOYCabwxC+vr8FtOIG6817R4hHiuIyd4xrqePwREaOA4kHr9lz+RZwh/WZ2S4xMu9/Fcm/vc0KCSGajaZI3d/TX8Rtq31H1UkcrJQC0jVeTv2cRIxzo5A9jnNc3VpbvddvgOMtxCIRSkNqYxqPzdQuH1vtqE+GV8MgkiJa9pu0jgrwm4M1rt/G/4epxSB468OqzcXce8Y07WuqeB42zEGiOQhtS0atHvdQtKuhNRGLH2jduq71PnE9SiUeSkZSVhIcC3capXxuY6xYWu5KzRUT5pGl7SGA31WaTbO+c0ots2YjeME8QnIaLDRC6jyyvXQfiaSWI6Z22BXFPe2N5bI0tcDYg8Cu99VTqsMo6p+eeFrnfmvYrC6rn2jr8XyVS2pLowMBgNRVMkbqyPUnqur5KKCCKnYGQsaxo4NClV64cI4Z+Rd+WfL4ArIxZzjOxvu5L/Mn7LXVHEqV0zWvjF3tFrdFMu0VpklNaY+hSsJbICD6IcMriCCDyKexhBDiPD+65z0ZSWF+eYtjsPO4b9FyeP4gCTSwO2/xHD9laxvFO4Bghd7d+5/KFzJ1JOuuuvNYWWb0jxPIuS/WIbKSlqpqKqp56Y+1Y8AAe8L6j5KO3D9k1pOR84N8uZkRHE7Od6DUD4rLWu0cK67PWaGqirKWOohcHMkbmBCsrgf4d4rkkkwyZ3hdeSHofeH1+a7269imz8kFJHbXLlHTD7W1/4LC3NY60s3gaeQ4/ovPFsdr8VbVY1JTtddlMO76Zjv9Asc6LzfJnzsOW2WyHRvdG/OzR1rKKWk7w99RDLKNXxDQO6t+yei54ErEzIYKgSix0eDax0Km1SVNP8Aiz3jC1lUBo46CS3PqoYJy+7JBlkabEHmoBYa5zXBzHODmm4INiCuvwPH2VOWCtc1k9rB2wcuP9UHU34q8ZuJrXY4Po9TjftmF281M0gjw7LhsF7QPhywVri+Pg/iPVddBO2RgfE7M21xZdtdyZ3xkprUXb80KNsgdvun3K3TTJwVFkIUkBZCEhKAVRyvAbbc8kj5ODdSqk8wYCTq7ks5TSLKIs0jWMzP1cdgubxvF+6JigIM50J4M/qocZxuzzFSPJfs6QbN9Fzt763vfiuKyzekYX35+sWK5xcS46k6kndIj1SWc94jjF3kXN9mjmeixOETJ3ju7BIaBd7vyjp1KdO4OY7wgNDbBvIAaBOu1jBHGbtvdz+L3cyo5dI3eihkFWiqn0VXDUxE54nh2nHmF7JR1LKqkhqIjmjlYHtI5FeLRRulkyNNgBd7vyt4n6LtuzPaiio8M/DVUoi7p5bE0/ksLfUfBdPh28G0/RrRNR6ZzVS1lZI6WouJ3kkzMFiSeY4qsDJSvaycXafK8G4d/fJWdLabJ17xlj254j5mn+9Cub32Zf0YCHDMCCEqrPjdRkOaXSUxNr8W9D1VhpBbmBuEAo0ItuE2pg/FtEkelWwbj/NHL1TkAlti3QjUWQFemm70Wd4XjTVWNtFHXQiVjqyAHvWD2rB738w6psEwkaNfFx6oCZaeE4pPRnIHAtPlDjoFmIVk8ZaMnF6ju8Lxqmrg5ocWzMNnxnzNPUfVa0cptcG4K8ulbJJlqKdxZVQjRzTYuby9VtYN2nc5gbV3zDeRo4dQtoX50ztr8iL6kd82QOTrk7LHpsQinaHNc17Ts5h0VxkgcLMfcFdUbTo4rNRbe8N3UD5SdBsoXvbH5nD6rLxPFo6WM947zDwsb5nfZVlaMUVrLtXVsga4lwFhq47Bcji2MvqS6KAubGd331d/RUq7EJq515DZg8rG7D+qqrknY2cV3kN/rEOFuCOpR+nVNF5HFsZ28zzs3+vRZnKFy5+SNuZ9r9GjmeikGVgyRuJubvf+Y/bokBa1pZFexPiJ9/1SIA+CiqCe7LWAuc45Wgbkp7nhguSb6WAGpPTqoqhzoNCW9+8ahu0beQ68yoYIZCIWGnYQ439q8bOPIdAoSL/9IQs3LOyumjG9jxdhu30TlWmhNN7anuYfead4+h6dVPG/O0OV0yyHtIAIcA5rtHNI3HJVnMNFI1oJfTyasdfboev7qwlAbIx0MovG8/I8COoUgaDfUagpVXhL4Jn0sx8Tdjz5fP7qwgHRvcx4ew+IfqqlVGKaRs0AIhk4cGO4tVlOGSSN8MxtHILEj3evwT2CNjg9ocNinKnHnpp3xT2DmnK63HkfjurnTkgFDi22XcG4Verj7iZlTCAIpHeIDTK/l6FTpzMj2vhkHs5PC7p1+aewLTVEsRbJBIWk63BsD6rVi7QVTGg9xHMeLAcjj6Hb4LnqfPBM+lm3abev/e6s/wB6qykzSNs4+maFd2vf3NqWke2Ti6Sxy/De6xG4i6Zxklf3jjuSdVamijqR4/BMPLL9Hcx1WZLTZZXMmb3cg5fuDxCrKTZWy2c/9M0WSteLg/BOc5rW3cbDmsrLUQWzDOz8zRr8uKsw1kYcO6u9w3fKbu+WwUaU0t5HO1eTGzl77vsOu6eSLBrAGsGzRwUTJWyajdSKdJBNc4At0JcTYAak+gQLvfkjAceJOzfUqRoEQdkJc8+aXn/tHAfqgEaDF4nEGfXbURjkOZ6rOlfnkJVqqkytyjzHdUhuqyZVgp6eiqKiISM7hjTt3r8pPUdElPEx7O/m0p28/wDMP5R06qhVzGrnMsoI4Na3Zo4AKMSCw3IJrjOy3Ig6gjqq0rPwkrZIwTA82sD5Dy+yhp5TG8X2OhCvjI9hZIM0bxY/RWXaJT0RpDhcag6pVWhzwTOgmcLtNgRx5H4qyVKJG1MZqIA9gIngFx/OziPUbj4hNp395EHKWNxY8Ova36qs9gpazu26QvGZnofsUBYRe3C6EKQMr4u9gEzbGSEWd/M3+ijppM7bHzD9laidkeHWBGzmnYjiqDmfhKt8dzkBu13Np2+3wVWC4hA1CFIIq9maFlSzzxWEnVp2PwKdG/PGHc1LE4Nf4xmY4ZXN5g7qpA001TLSvNwD4TzHBPkFlK5jKiMQynLbyScWH6hIhSCm0yU0joZ26jccCOBCJqKOQB7SA46ghXZYm1cIie4NeNY3HZp5HoVSp5XRPMT2ltnWLT7pVWiCpJ31NbvGFwvoW7j1V2OaMMBlm7y/uQ/Vx/YfNWXNDgQbEKlPQ5SZIDldyT0C8yVjo8sdgz8oGyRzrC7tBzKymTOZIGPb3cnU6H4qwXy1ByMaXuHus+qaNGPfmfnPxUkUDe7EtVcQnysGjpPsOqUNig8+SabcNGrGep94/ooKiZznGSR13Hmq9ECYhUmR1iLW0a1ujWjoqOh1Sudd13LQwvAMUxWnNRRRF8QeWX0Gu/H1Vowc3haMdZfx7DH4RiUtK8Hu75onH3mnb7KrTzFhDX3LV6n2kwSLGqPuyQydmsUltjy9F5bXUlRQVL6arjLJW6WOx6g8QtvJpdU9Xpl7a3B6vRLVsD4GzNsTFv1b/Q/VPhfnivubqpTymN1naxnRwPK2qkp/YzvhcdAbfFYJ6ZplpR1re8og8eaB/wD4Hf5GykT4gHudG/yyNLHehCuSQxPzxtPHinqrQkgFj/MN/UaFWlCAJla3PTMlAGaE2I/lP2KenxZS4tf5XjI70KArUz80duLdFMqdNeKodG/cEtPQhXEQBR4g27IaoeZh7t/pwP0UiexgnbJAdpWFoPI8D80BGw5o2uCVVqKQuiyv0e06jrxVlEATK2Lv4+/YPbRi0lvfbz9QnpWucxwLeCnNBWpZQ5uUm9tjzVgjnsqdUwU1QO7BEbxnj9OI+BSTTGTQaDj1VNI3BKxzJ2mPKCPzcVAamaJghefYgaEaW9eadxTZXNY031J4Hio0gVzmtBJIA5KnJIXuzFMeS08cg2vwV7CMJrMZqRBQRF9vO86NYOZP0UqLk8RKW+hmFYfUYrXRUlI3M951PBo/Mei9ownD4cKw+GjgHgjbvzPE/NVOzXZ6mwKlyRe0nf8A4szhq7oOQ6Lat6L1vH8dVrX7O2uvigIVDFsIo8Wp+6rI81vK8aOaehWghdDipLGaNJnmeK9isQpS51ERVQ66Xs+3pxWFXwT0z4DPDJHI+PKRI0tILDbj0I+S9osFHNTwzsyTxMkbye0EfquSfhRfcejGXjp9o8Zjqi2wfqDurMcjXEFpHxXotX2SwWoB/wDad0TxhcW/pssmo7AUjtaasnj5BwDlzvxLU+uzJ0TOKlHd4lLyecwHQi6sLoKzsRXOlZJDUwvIYGnMCLkKB3ZbGGbwxO/2S3/cBZumxe0V/HJfBjIO3otJ+A4qzzUMnwLT+xUDsLxBuhoan4QuKrwl9EcX9GXiAyVjZB/msD/iND+w+asjZPrsPrDTROdR1IdHKRYwu8rh6cwmxQVAjbnp5gbf6ZVOLT9FcYiASCCDYhSdxN/oyf8AApRT1BHhp5j/APmVOMFOotHiTiBZkoEnzH3BU/NOrsPrXtp3R0VU4gFvhhcevJSjDsTe0CPDatzusRaP1TjLfROMgUT52s4glXh2cx+fT/097Bzc9o+qsw9iMXkPtPw0Y6vJP7KyqsfpE8JfRhh7qqKSI6vbeWL1HmHxCq3Fs1/DzXd0PYR8UrZJ68Xab2jj+606TsRgsLs0kUk5ve0jzl+QWi8O2XvosqJs8sknaSGRXe8mwsN/RaVD2XxzEXB0dE+Nh2fUezH66/ovXqTD6OiblpKWGEf/AFsDf2Viy6I+CvlmsfHXyzhMJ/h5BGWvxSpMx/04xlb8TuV2lHRU1DA2CkhZFE3ZrBYKewSrrhVCHpGygl6EASoQtCx//9k="
+                alt="sarah johnson"
+              />
+            </div>
+            <div class="info">
+              <h3>Sarah Johnson</h3>
+              <p>Mrketing Director</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
