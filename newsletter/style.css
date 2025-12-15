@@ -1,0 +1,141 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-color: #121212;
+  --container-bg: #1e1e1e;
+  --primary-color: #bb86fc;
+  --secondary-color: #03dac6;
+  --text-primary: #e1e1e1;
+  --text-secondary: #b0b0b0;
+  --border-color: #2c2c2c;
+  --input-bg: #2c2c2c;
+  --shadow-color: rgba(0, 0, 0, 0.3);
+}
+
+body {
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  min-height: 100vh;
+}
+
+.container {
+  width: 90%;
+  max-width: 400px;
+  position: relative;
+  background: var(--container-bg);
+  border-radius: 15px;
+  border: 1px solid var(--border-color);
+  /* padding: 40px; */
+  padding: 2.5em;
+  text-align: center;
+}
+
+.icon-container {
+  font-size: 2.5em;
+  color: var(--primary-color);
+
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.discrb {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 1rem;
+  /* background-color: var(--input-bg);
+  padding: 10px;
+  border-radius: 10px; */
+}
+
+.input-group i {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-secondary);
+}
+
+input {
+  color: var(--text-secondary);
+  font-size: 1em;
+  width: 100%;
+  padding: 0.85em 0.85em 0.85em 2.5em;
+  background-color: var(--input-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  transition: all 0.2s ease;
+}
+
+input::placeholder {
+  opacity: 0.7;
+}
+input:focus {
+  outline: none;
+  border: 1px solid var(--primary-color);
+  box-shadow: 0 0 0 2px #bb86fc47;
+}
+
+button {
+  width: 100%;
+  height: 2.8em;
+  border-radius: 10px;
+  font-size: 1em;
+  background-color: var(--primary-color);
+  transition: all 0.3s ease;
+  margin-bottom: 1.5em;
+  border: none;
+}
+button i {
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #a767fa;
+  transform: translateY(-3px);
+}
+
+button:hover i {
+  transform: translateX(3px);
+}
+
+.bonus {
+  border-top: 1px solid var(--border-color);
+  padding-top: 2em;
+  text-align: left;
+}
+
+.bonus p {
+  font-size: 0.85em;
+  color: var(--text-secondary);
+  margin-bottom: 0.8em;
+}
+
+.bonus p i {
+  font-size: 0.8em;
+  margin-right: 8px;
+  color: var(--secondary-color);
+}
+
+@media (max-width: 500px) {
+  .container {
+    padding: 2em 1.5em;
+  }
+}
