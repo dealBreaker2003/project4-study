@@ -112,7 +112,8 @@ h1::after {
   /* margin-top: 20px; */
 }
 
-.option {
+.option,
+.switch-container {
   display: flex;
   justify-content: space-between;
   font-size: 0.9rem;
