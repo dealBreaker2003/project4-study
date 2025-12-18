@@ -13,18 +13,20 @@ const strengthBar = document.querySelector(".strength-bar");
 const strengthLabel = document.getElementById("strength-label");
 const switchBtn = document.getElementById("switch-btn");
 
-// DOM Elements - all the elements we need from HTML
-// const passwordInput = document.getElementById("password");
-// const lengthSlider = document.getElementById("length");
-// const lengthDisplay = document.getElementById("length-value");
-// const uppercaseCheckbox = document.getElementById("uppercase");
-// const lowercaseCheckbox = document.getElementById("lowercase");
-// const numbersCheckbox = document.getElementById("numbers");
-// const symbolsCheckbox = document.getElementById("symbols");
-// const generateButton = document.getElementById("generate-btn");
-// const copyButton = document.getElementById("copy-btn");
-// const strengthBar = document.querySelector(".strength-bar");
-// const strengthText = document.querySelector(".strength-container p");
+// 打包盒子 一次操作，
+const checkBoxes = [
+  uppercaseCheckbox,
+  lowercaseCheckbox,
+  numbersCheckbox,
+  symbolsCheckbox,
+];
+// 盒子对应取样池
+const charSet = [
+  "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+  "abcdefghijklmnopqrstuvwxyz",
+  "0123456789",
+  "!@#$%^&*()-_=+[]{}|;:,.<>?/",
+];
 
 //设置滑块显示，将滑块的长度值赋给标签文本内容，显示当前密码长度
 lengthSlider.addEventListener("input", () => {
@@ -36,29 +38,20 @@ generateButton.addEventListener("click", makePassword);
 //生成函数，检查勾选的数据类型，强制至少选一种
 //然后调用外部函数进行具体逻辑处理，最后返回生成的密码更新在密码框
 function makePassword() {
-  const length = Number(lengthSlider.value);
-  const includeUppercase = uppercaseCheckbox.checked;
-  const includeLowercase = lowercaseCheckbox.checked;
-  const includeNumbers = numbersCheckbox.checked;
-  const includeSymbols = symbolsCheckbox.checked;
+  // map创建参数数组
 
-  if (
-    !includeUppercase &&
-    !includeLowercase &&
-    !includeNumbers &&
-    !includeSymbols
-  ) {
-    alert("请至少选择一种数据类型！");
+  const makePara = checkBoxes.map((box) => box.checked);
+  const length = Number(lengthSlider.value);
+
+  // 强制最少选一种类型=>数组include
+  if (!makePara.includes(true)) {
+    alert("请至少选择一种类型！");
     return;
   }
 
-  const newPassword = createRandomPassword(
-    length,
-    includeUppercase,
-    includeLowercase,
-    includeNumbers,
-    includeSymbols
-  );
+  // 拆包传参function（...())，
+  const newPassword = createRandomPassword(length, ...makePara);
+
   passwordInput.value = newPassword;
   updateStrengthMeter(newPassword);
 }
@@ -73,14 +66,9 @@ function makePassword() {
  * @param {boolean} includeNumbers - 是否包含数字
  * @param {boolean} includeSymbols - 符号
  * @returns {string} password - 打乱顺序后的随机密码
+ * function(...())打包接收参数，函数内部直接使用参数数组操作
  */
-function createRandomPassword(
-  length,
-  includeUppercase,
-  includeLowercase,
-  includeNumbers,
-  includeSymbols
-) {
+function createRandomPassword(length, ...makePara) {
   // #region 1 保底逻辑
   // #region 1.1 初始化配置
   // 密码初始化成数组，后面好洗牌
@@ -108,6 +96,7 @@ function createRandomPassword(
 
   // 配置数据
   // input
+  //...操作符+for of，循环添加成员
   /* const optionPools = [
     { check: includeUppercase, pool: uppercaseLetters },
     { check: includeLowercase, pool: lowercaseLetters },
@@ -148,21 +137,19 @@ function createRandomPassword(
   // #region 2 配额逻辑·
 
   // #region 2.1 初始化配置
-  const portionGet = [
-    { condition: includeUppercase, portion: 0 },
-    { condition: includeLowercase, portion: 0 },
-    { condition: includeNumbers, portion: 0 },
-    { condition: includeSymbols, portion: 0 },
-  ];
 
+  // 参数.map直接返回对象成员数组！！！！！！！我日你哥
+
+  const portionGet = makePara.map((item) => ({ condition: item, portion: 0 })); // 对于每一个item，把他打包进一个对象成员，并返回到这个item的位置
+
+  //页面输入筛选参与的类型
   const activePortion = portionGet.filter((item) => item.condition);
-
   // console.log(activePortion);
-  const activeLength = activePortion.length;
 
-  let minTake = switchBtn.checked ? 1 : 0;
+  const activeLength = activePortion.length;
+  let minTake = switchBtn.checked ? 1 : 0; // 软硬切换决定保底值从而实现~
   let max = length - minTake * activeLength; // 随机数生成范围
-  let password = [];
+  let password = []; // 便于洗牌
 
   // #endregion
 
@@ -189,17 +176,12 @@ function createRandomPassword(
   // console.log("洗牌后:", JSON.stringify(activePortion.map((i) => i.portion)));
   //console.log(activePortion);
   // console.log(portionGet);
+
   // #endregion
 
   // #region 2.2.2 按配额取样
 
-  // 初始化最终需求状态，加池子
-  const charSet = [
-    "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
-    "abcdefghijklmnopqrstuvwxyz",
-    "0123456789",
-    "!@#$%^&*()-_=+[]{}|;:,.<>?/",
-  ];
+  // 初始化最终需求状态，份额加池子
 
   charSet.forEach((chars, index) => {
     portionGet[index].pool = chars;
