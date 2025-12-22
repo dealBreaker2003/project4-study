@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Password Generator</h1>
+      <!-- 密码生成框 -->
+      <div class="password-container">
+        <input type="text" readonly id="password" value="hello" />
+        <i class="far fa-copy" id="copy-btn" title="copy to clipboard"></i>
+      </div>
+      <!-- 密码选项 -->
+      <div class="options">
+        <!-- 密码长度 -->
+        <div class="option">
+          <label for="length">Password Length</label>
+          <div class="range-container">
+            <input type="range" id="length" min="6" max="24" value="12" />
+            <span id="length-value">12</span>
+          </div>
+        </div>
+        <!-- 包含大写 -->
+        <div class="option">
+          <label for="Uppercase">Include Uppercase</label>
+          <input type="checkbox" id="Uppercase" checked />
+        </div>
+        <!-- 包含小写 -->
+        <div class="option">
+          <label for="Lowercase">Include Lowercase</label>
+          <input type="checkbox" id="Lowercase" checked />
+        </div>
+        <!-- 包含数字 -->
+        <div class="option">
+          <label for="Numbers">Include Numbers</label>
+          <input type="checkbox" id="Numbers" checked />
+        </div>
+        <!-- 包含符号 -->
+        <div class="option">
+          <label for="Symbols">Include Symbols</label>
+          <input type="checkbox" id="Symbols" checked />
+        </div>
+      </div>
+      <!-- 软硬切换 -->
+      <div class="switch-container">
+        <label for="switch-btn">use hard random?</label>
+        <input type="checkbox" id="switch-btn" checked />
+      </div>
+      <!-- 生成按钮 -->
+      <button id="generate-btn">
+        <i class="fas fa-key"></i>
+        Generate Password
+      </button>
+      <!-- 强度评估 -->
+      <div class="strength-container">
+        <p>Password Strength : <span id="strength-label">weak</span></p>
+
+        <div class="strength-meter">
+          <div class="strength-bar"></div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
