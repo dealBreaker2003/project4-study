@@ -61,12 +61,8 @@ function makePassword() {
 /**
  *
  * @param {number} length - 密码长度
- * @param {boolean} includeUppercase - 是否包含大写
- * @param {boolean} includeLowercase - 是否包含小写
- * @param {boolean} includeNumbers - 是否包含数字
- * @param {boolean} includeSymbols - 符号
+ * @param {Array} makePara - 包含勾选状态（Boolean）的参数数组
  * @returns {string} password - 打乱顺序后的随机密码
- * function(...())打包接收参数，函数内部直接使用参数数组操作
  */
 function createRandomPassword(length, ...makePara) {
   // #region 1 保底逻辑
@@ -289,7 +285,7 @@ function createRandomPassword(length, ...makePara) {
 /**
  *
  * @param {object} cordConfig坐标变量对象
- * @returns {string} cords 坐标
+ * @returns {Array}} cords 坐标
  */
 function getCords({ count, max }) {
   let cords = [];
@@ -311,7 +307,10 @@ function getCords({ count, max }) {
 //是否包含各种数据类型/密码长度，进行打分
 //根据分数改变强度条状态和标签文本
 
-//
+/**
+ *
+ * @param {string} newPassword 生成的密码
+ */
 function updateStrengthMeter(newPassword) {
   //正则检查
   const poolLength = charSet.length;
@@ -322,17 +321,23 @@ function updateStrengthMeter(newPassword) {
     /["!@#$%^&*()\-_=+[\]{}|;:,.<>?/"]/,
   ];
 
-  //最高分要求，超过20位才能拿满分，最高长度分数40，不然会溢出
+  //最高分要求，超过20位才能拿满分，最高长度分数40
   const passwordLength = newPassword.length;
 
   let strengthScore = Math.min(passwordLength * 2, 40);
   console.log(`密码长度分数：${strengthScore}`);
 
   // 分数计算不需要绑定数据类型，只需要知道选了几个
-  const checkTimes = checkRules.map((type) => type.test(newPassword));
   // 从需要正则的容器获取所有类型数量，再filter计算选中数量
-  const activeTimes = checkTimes.filter((staTs) => staTs);
 
+  /*   const checkTimes = checkRules.map((type) => type.test(newPassword));
+  const activeTimes = checkTimes.filter((staTs) => staTs); */
+  // 公式化链式调用 map + filter 得到再去掉
+  const activeTimes = checkRules
+    .map((item) => item.test(newPassword))
+    .filter((stat) => stat);
+
+  // 有多少个加多少次分
   for (const times of activeTimes) {
     strengthScore += 15;
   }
@@ -340,23 +345,17 @@ function updateStrengthMeter(newPassword) {
   //强制短密码低分
   if (passwordLength < 8) strengthScore = Math.min(20, strengthScore);
 
-  //传入长度
   strengthBar.style.width = strengthScore + "%";
 
-  //根据分数设置颜色和标签
-  let barColor = "";
-  let labelContent;
+  // 根据分数设置颜色和标签
 
-  if (strengthScore < 40) {
-    barColor = "#fc8181";
-    labelContent = "weak";
-  } else if (strengthScore < 70) {
-    barColor = "#fbd38d";
-    labelContent = "medium";
-  } else {
-    barColor = "#68d391";
-    labelContent = "strong";
-  }
+  // 三元式嵌套重构 初始化 + 赋值
+  const [barColor, labelContent] =
+    strengthScore < 40
+      ? ["#fc8181", "weak"]
+      : strengthScore < 70
+      ? ["#fbd38d", "medium"]
+      : ["#68d391", "strong"];
 
   strengthBar.style.background = barColor;
   strengthLabel.textContent = labelContent;
