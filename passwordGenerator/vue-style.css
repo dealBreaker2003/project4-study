@@ -1,0 +1,253 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+:root {
+  --primary-light: #2b58763c;
+  --primary-color: #2b5876;
+  --secondary-color: #4e4376;
+  --weak-color: #fc8181;
+  --medium-color: #fbd38d;
+  --strong-color: #68d391;
+  --bg-light: #f8fafc;
+  --border-color: #e2e8f0;
+  --text-gray: #646464;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(
+    60deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+}
+
+/* Vue3 根容器样式保持不变 */
+#app {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  max-width: 450px;
+  width: 90%;
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 0 5px 3px var(--primary-color);
+}
+
+h1 {
+  font-size: 1.8rem;
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+h1::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 4px;
+  width: 50%;
+  background: linear-gradient(
+    60deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  border-radius: 20px;
+}
+
+.password-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  background-color: var(--bg-light);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  box-shadow: 0 0 0 1px #efefef;
+  margin-bottom: 2em;
+}
+
+/* 复制按钮样式 - Vue3中使用动态class和style */
+.password-container i {
+  font-size: 1.2em;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 1em;
+  color: #718096;
+  cursor: pointer;
+}
+
+.password-container i:hover {
+  color: var(--primary-color);
+}
+
+.password-container input {
+  background-color: var(--bg-light);
+  height: 3.5em;
+  width: 90%;
+  letter-spacing: 1px;
+  border: none;
+}
+
+.password-container input:focus {
+  outline: none;
+}
+
+.options {
+  padding: 1.5em;
+  margin-bottom: 2em;
+  background-color: var(--bg-light);
+  border-radius: 10px;
+}
+
+.option,
+.switch-container {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  margin-bottom: 1em;
+  color: var(--text-gray);
+  font-weight: 500;
+}
+
+.option:last-child {
+  margin-bottom: 0;
+}
+
+input[type="checkbox"],
+input[type="range"] {
+  accent-color: var(--primary-color);
+}
+
+.range-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#length {
+  width: 80%;
+}
+
+#length-value {
+  width: 20px;
+  height: 20px;
+  color: var(--primary-color);
+  font-weight: 700;
+  background-color: var(--primary-light);
+  border-radius: 3px;
+  text-align: center;
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  border: 2px solid var(--primary-color);
+  position: relative;
+  cursor: pointer;
+  outline: none;
+}
+
+input[type="checkbox"]:checked {
+  background-color: var(--primary-color);
+}
+
+input[type="checkbox"]:checked::after {
+  color: var(--bg-light);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  content: "\2714";
+}
+
+#generate-btn {
+  font-weight: 700;
+  color: var(--bg-light);
+  padding: 1em;
+  margin-bottom: 1.5em;
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  background: linear-gradient(
+    60deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  transition: all 0.3s ease;
+}
+
+#generate-btn:hover {
+  transform: translateY(-3px);
+}
+
+.strength-container {
+  margin-top: 0.8em;
+}
+
+.strength-container p {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85em;
+  font-weight: 400;
+  margin-bottom: 0.7em;
+}
+
+.strength-container p span {
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.strength-meter {
+  height: 0.5em;
+  width: 100%;
+  background-color: var(--bg-light);
+  border-radius: 5px;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.108);
+  overflow: hidden;
+}
+
+.strength-bar {
+  height: 100%;
+  width: 10%;
+  background: var(--weak-color);
+  transition: all 0.3s ease;
+  border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 95%;
+    padding: 1.8rem;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  .option label {
+    font-size: 0.8rem;
+  }
+}

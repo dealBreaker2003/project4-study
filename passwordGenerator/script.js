@@ -49,6 +49,11 @@ function makePassword() {
     return;
   }
 
+  /*  (!makePara.includes(true))&&(
+    alert("请至少选择一种类型！");
+    return;
+  ) */
+
   // 拆包传参function（...())，
   const newPassword = createRandomPassword(length, ...makePara);
 
@@ -229,6 +234,7 @@ function createRandomPassword(length, ...makePara) {
   const cords = getCords(cordConfig);
 
   // 坐标差值（份额）分配到activeNew   // NOTE:foreach 替代 for循环的应用 （i）
+  // 单个数组内部操作
   activeNew.forEach((item, i) => {
     // 全自动的i
     item.portion += cords[i + 1] - cords[i];
@@ -271,9 +277,7 @@ function createRandomPassword(length, ...makePara) {
     password += charSet[targetIndex][charIndex];
     portionNew[targetIndex].portion--;
     portionNew[targetIndex].portion === 0 && pool.splice(poolIndex, 1);
-    /*  if (portionNew[targetIndex].portion === 0) {
-      pool.splice(poolIndex, 1); // 额度用完从索引池移除该索引，确保每次都能抽到有机会的类型，避免循环跑空
-    } */
+    //额度用完从索引池移除该索引，确保每次都能抽到有机会的类型，避免循环跑空
   }
 
   // #endregion

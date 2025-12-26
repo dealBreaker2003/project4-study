@@ -1,0 +1,147 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #7749f8;
+  --primary-light: #9775fa;
+  --dark: #212529;
+  --light: #f8f9fa;
+  --gray: #868e96;
+  --danger: #fa5252;
+  --success: #40c057;
+  --border: #e9ecef;
+}
+
+body {
+  min-height: 100vh;
+  padding: 20px;
+  background-color: #f3f3f3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--dark);
+}
+.container {
+  background-color: var(--light);
+  max-width: 500px;
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.104);
+  overflow: hidden;
+}
+
+header {
+  padding: 20px 25px;
+  background-color: var(--primary);
+  color: var(--light);
+}
+
+header h2 {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.todo-input {
+  background-color: var(--light);
+  padding: 20px 25px;
+  display: flex;
+  gap: 10px;
+  border-bottom: 1px solid var(--border);
+}
+
+.todo-input input {
+  flex: 1;
+  padding: 15px 20px;
+  border-radius: 15px;
+  border: 1px solid var(--border);
+  font-size: 1em;
+  transition: all 0.2s ease;
+}
+
+.todo-input input:focus {
+  outline: none;
+  border: 1px solid var(--primary);
+  box-shadow: 0 0 5px var(--primary-light);
+}
+
+.todo-input button {
+  background-color: var(--primary);
+  color: var(--light);
+  height: 45px;
+  width: 45px;
+  border: none;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+}
+
+.todo-input button:hover {
+  background-color: var(--primary-light);
+  cursor: pointer;
+}
+
+.todo-filter {
+  margin-bottom: 1px solid var(--border);
+  display: flex;
+  gap: 15px;
+  padding: 15px 25px;
+}
+
+.filter {
+  color: var(--gray);
+  border-bottom: 2px solid transparent;
+  padding: 5px 3px;
+  transition: all 0.2s ease;
+}
+
+.filter:hover {
+  cursor: pointer;
+}
+
+.filter.all {
+  color: var(--primary);
+  border-bottom: 2px solid var(--primary);
+  font-weight: 700;
+}
+
+.todo-container {
+  padding: 15px 0;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+#todos-list {
+  list-style: none;
+}
+
+.todo-item {
+  padding: 12px 15px;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.2s ease;
+}
+
+.todo-item:hover {
+  background-color: var(--light);
+}
+
+.checkbox-container {
+  margin-right: 15px;
+}
+
+.todo-checkbox {
+  opacity: 0;
+  position: absolute;
+}
+.checkmark {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #dee2e6;
+  border-radius: 4px;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.2s;
+}

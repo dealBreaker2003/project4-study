@@ -1,0 +1,158 @@
+/* color system
+font:343a40
+*/
+
+body {
+  display: flex;
+}
+.container {
+  display: grid;
+  grid-template-columns: 4fr 3fr 3fr;
+  /* text-align: center; */
+  /* justify-content: center; */
+  /* align-items: center;
+  flex-direction: column; */
+  border: 7px solid rgba(0, 0, 0, 0.598);
+  border-radius: 30px;
+  width: 1100px;
+  height: 560px;
+  margin: 50px auto;
+  background-color: rgba(244, 246, 248, 1);
+  /* gap: 10px; */
+  justify-items: center;
+  color: #343a40;
+  box-shadow: 0 0 10px 10px #b6c2cd;
+}
+
+.header {
+  text-align: center;
+  grid-column: 1/-1;
+  margin-bottom: 0;
+  font-size: 45px;
+}
+
+.album-img {
+  border-radius: 30px;
+  width: 400px;
+  height: 325px;
+  margin-left: 40px;
+}
+
+.frontpage {
+  /* background-color: pink; */
+  align-self: flex-start;
+}
+
+.info {
+  /* background-color: cyan; */
+  font-size: 13px;
+}
+
+.date {
+  margin-bottom: 40px;
+}
+
+.info h3 {
+  font-size: x-large;
+  margin-bottom: -10px;
+  margin-top: 0px;
+}
+
+.size {
+  font-size: 13px;
+}
+
+.size li {
+  line-height: 40px;
+
+  list-style: none;
+  margin-left: -40px;
+}
+
+.track {
+  text-align: center;
+  /* background-color: violet; */
+  align-self: flex-start;
+}
+
+.track h3 {
+  margin: 0 auto;
+  font-size: x-large;
+  margin-bottom: 30px;
+}
+
+/* 曲目列表滚动 */
+
+.list {
+  font-style: italic;
+  color: rgba(0, 0, 0, 0.6);
+  list-style: none;
+  padding-left: 0;
+}
+
+.list-container {
+  height: 240px;
+  width: 250px;
+  overflow-y: auto; /* 垂直滚动 */
+  /* border-top: 1px solid rgba(0, 0, 0, 0.139); */
+  border-radius: 8px;
+  padding: 10px;
+  background-color: rgb(244, 246, 248, 1);
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+}
+
+/* 列表样式 */
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.list li {
+  padding: 12px 15px;
+  margin-bottom: 8px;
+  background-color: rgb(244, 246, 248, 1);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.list li:hover {
+  background-color: #e3f2fd;
+  transform: translateX(5px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 自定义滚动条（可选） */
+.list-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.footer {
+  grid-column: 1/-1;
+  margin-bottom: 10px;
+}
+
+.block {
+  /* display: inline-block; */
+  display: flex;
+  margin-bottom: -10px;
+  gap: 15px;
+  border-radius: 5px;
+}
+
+.pure {
+  border-radius: 1px;
+}
+
+.white {
+  padding: 20px 20px;
+  background-color: white;
+  margin-right: 10px;
+}
+.black {
+  padding: 20px 20px;
+  background-color: black;
+}
